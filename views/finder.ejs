@@ -1,0 +1,149 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="images/Finder.png" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS version 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <title>CollegeFinder</title>
+
+    <!-- jquery ui -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css"
+        type="text/css" media="all" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container-fluid col-md-8 offset-md-2">
+        <p class="text-center h1 mb-3" style="font-size: 5vw">Choose Valid Options</p>
+
+        <form action="/finders" method="post" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="clgname">College Name</label>
+                <input type="text" class="form-control" required name="clgname" id="clgname"
+                    placeholder="Enter College Name" />
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Enter college name!!
+                      </div>
+            </div>
+
+            <div class="form-group">
+                <label for="branchname">Branch</label>
+                <select class="form-control form-select-md" name="branchname" required id="branchname"
+                    placeholder="Enter College Name">
+                    <option value="" selected>select branch</option>
+                    <option value="CIV">CIVIL ENGINEERING</option>
+                    <option value="MEC">MECHANICAL ENGINEERING</option>
+                    <option value="AID">ARTIFICIAL INTELLIGENCE AND DATA SCIENCE</option>
+                    <option value="CAI">COMPUTER SCIENCE AND ENGINEERING (ARTIFICIAL INTELLIGENCE)</option>
+                    <option value="CSB">COMPUTER SCIENCE AND BUSINESS SYSTEMS</option>
+                    <option value="CSC">COMPUTER SCIENCE AND Cyber Security</option>
+                    <option value="CSD">COMPUTER SCIENCE AND ENGINEERING (DATA SCIENCE)</option>
+                    <option value="CSE">COMPUTER SCIENCE AND ENGINEERING</option>
+                    <option value="CSG">COMPUTER SCIENCE AND DESIGN</option>
+                    <option value="CSM">COMPUTER SCIENCE AND MACHINE LEARNING</option>
+                    <option value="CSO">COMPUTER SCIENCE AND IOT</option>
+                    <option value="CSS">COMPUTER SCIENCE AND SYSTEMS ENGINEERING</option>
+                    <option value="ECE">ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+                    <option value="EEE">ELECTRONICS AND ELECTRICAL ENGINEERING</option>
+                    <option value="EIE">ELECTRONICS AND INSTRUMENTATION ENGINEERING</option>
+                    <option value="INF">INFORMATION TECHNOLOGY</option>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Select Valid Branch!!
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="ctyname">Category</label>
+                <select class="form-control form-select-md" name="ctyname" required id="ctyname">
+                    <option value="" selected>select category</option>
+                    <option value="OC_BOYS">OC_BOYS</option>
+                    <option value="OC_GIRLS">OC_GIRLS</option>
+                    <option value="SC_BOYS">SC_BOYS</option>
+                    <option value="SC_GIRLS">SC_GIRLS</option>
+                    <option value="ST_BOYS">ST_BOYS</option>
+                    <option value="ST_GIRLS">ST_GIRLS</option>
+                    <option value="BCA_BOYS">BCA_BOYS</option>
+                    <option value="BCA_GIRLS">BCA_GIRLS</option>
+                    <option value="BCB_BOYS">BCB_BOYS</option>
+                    <option value="BCB_GIRLS">BCB_GIRLS</option>
+                    <option value="BCC_BOYS">BCC_BOYS</option>
+                    <option value="BCC_GIRLS">BCC_GIRLS</option>
+                    <option value="BCD_BOYS">BCD_BOYS</option>
+                    <option value="BCD_GIRLS">BCD_GIRLS</option>
+                    <option value="BCE_BOYS">BCE_BOYS</option>
+                    <option value="BCE_GIRLS">BCE_GIRLS</option>
+                    <option value="OC_EWS_BOYS">OC_EWS_BOYS</option>
+                    <option value="BCE_BOYS">OC_EWS_GIRLS</option>
+                    <div class="invalid-feedback">Example invalid select feedback</div>
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Select Valid Category!!
+                  </div>
+            </div>
+            <div class="d-grid gap-2 d-lg-block">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+                <a class="btn btn-success" href="/">Home Page</a>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        $(function () {
+
+            // Super logic
+            var test = <%- JSON.stringify(clgarray) %>
+                $("#clgname").autocomplete({
+                    source: test,
+                })
+        });
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>
