@@ -2,43 +2,143 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="icon" href="images/Finder.png" type="image/x-icon">
-  
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .buttons{
+      font-size: 1.3vw;
+    }
+    .eng_lab {
+      font-size: 1.2vw;
+    }
 
+    .pharm_lab {
+      font-size: 1.2vw;
+    }
+
+    .title {
+      font-size: 2vw;
+    }
+
+    .subtitle {
+      font-size: 1.3vw;
+    }
+
+    .stream_header {
+      font-size: 2vw;
+    }
+
+    @media screen and (max-width: 950px) {
+      .stream_header {
+        font-size: 3vw;
+      }
+
+      .title {
+        font-size: 3vw;
+      }
+
+      .subtitle {
+        font-size: 2vw;
+      }
+
+      .eng_lab {
+        font-size: 1.7vw;
+      }
+
+      .pharm_lab {
+        font-size: 1.7vw;
+      }
+      .buttons{
+      font-size: 2vw;
+    }
+    }
+
+    @media screen and (max-width: 450px) {
+      .stream_header {
+        font-size: 4vw;
+      }
+
+      .title {
+        font-size: 4vw;
+      }
+
+      .subtitle {
+        font-size: 3vw;
+      }
+
+      .eng_lab {
+        font-size: 3vw;
+      }
+
+      .pharm_lab {
+        font-size: 3vw;
+      }
+      .buttons{
+      font-size: 3vw;
+      }
+    }
+  </style>
   <title>CollegeFinder</title>
 </head>
 
 <body>
 
+  <div class="container-fluid p-5 bg-success text-white text-center">
+    <h1 class="title">About AP Eamcet Counselling Assistor</h1>
+    <p class="subtitle">Through this counselling assistor you can know the previous year closing ranks of
+      colleges and also you can
+      know the list of colleges based on rank.
+    </p>
+  </div>
+
   <div class="container-fluid">
-    <img src="images/Finder-unscreen.gif" alt="..." class="rounded border border rounded-1 mt-5 rounded-circle mx-auto border-4 d-block mb-5" height="250px" width="40%">
-    <div class="d-flex flex-column align-items-center  justify-content-center">
-      <div class="p-2">
-        <p class="h1  text-center" style="font-size:4vw;">Welcome to AP EAMCET College finder</p>
+    <div class="row">
+      <div class="d-flex flex-column align-items-center  justify-content-center">
+        <div class="p-2">
+          <div class="p-2">
+            <div id="main"><span class="h1  text-center" style="font-size:4vw;">Welcome</span></div>
+            <div id="inner">
+              <span class="h1  text-center" style="font-size:4vw;">To APEAMCET Counselling Assistor</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="#" class="btn btn-secondary mb-3" style="min-width: 30%">Choose the year</a>
+
+      <form action="/selection" method="get">
+
+        <div class="d-flex flex-column align-items-center  justify-content-center">
+          <p class="h1 stream_header">Select Stream</p>
+            <div class="d-grid col-3 mx-auto gap-2 mb-2">
+            <input class="btn-check p-2" type="radio" name="stream" id="eng" value="engineering" required>
+            <label class="btn btn-outline-success eng_lab" for="eng">
+              ENGINEERING
+            </label>
+                     
+            <input class="btn-check p-2" type="radio" id="pharma" name="stream" value="pharmacy" required>
+            <label class="btn btn-outline-success  pharm_lab" for="pharma">
+              PHARMACY
+            </label>
+          </div>
+        </div>
+        <div class="d-grid col-6 mx-auto gap-2 mb-2">
+          <a href="#" class="btn btn-secondary mb-3" style="font-size: 2.2vw;">Choose the year</a>
+        </div>
+        <div class="d-grid gap-2 col-10 mx-auto d-block mb-2">
+          <button type="submit" name="year" value="2019" style="max-width:300%" class="btn btn-success buttons">2019</button>
+          <button type="submit" name="year" value="2020" class="btn btn-success buttons">2020</button>
+          <button type="submit" name="year" value="2021" class="btn btn-success buttons">2021</button>
+        </div>
     </div>
-    <form action="/finder" method="get">
-      <div class="d-grid col-6 mx-auto gap-2 mb-2">
-        <button type="submit" name="year" value="2018" style="max-width:300%" class="btn btn-success">2018</button>
-        <button type="submit" name="year" value="2019" class="btn btn-success">2019</button>
-        <button type="submit" name="year" value="2020" class="btn btn-success">2020</button>
-      </div>
     </form>
+  </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 </body>
-
 </html>

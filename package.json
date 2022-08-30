@@ -1,7 +1,6 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,12 +10,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "mongoose": "^6.0.14",
-    "nodemon": "^2.0.15",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
     "path": "^0.12.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaitanyakrishna069/ApEamcetApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chaitanyakrishna069/ApEamcetApp/issues"
+  },
+  "homepage": "https://github.com/Chaitanyakrishna069/ApEamcetApp#readme",
+  "devDependencies": {},
+  "description": ""
 }

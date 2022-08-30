@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/Finder.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/public/images/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .header {
+      font-size: 1.7vw;
+    }
+
+    .tcell {
+      font-size: 1.5vw;
+    }
+
+    .buttons {
+      font-size: 2vw;
+    }
+
+    @media screen and (max-width: 720px) {
+
+      .header {
+        font-size: 1.4vw;
+      }
+
+      .tcell {
+        font-size: 1.7vw;
+      }
+
+      .buttons {
+        font-size: 3vw;
+      }
+    }
+
+    @media screen and (max-width: 615px) {
+
+      .header {
+        font-size: 1.8vw;
+      }
+
+      .tcell {
+        font-size: 1.8vw;
+      }
+
+      .buttons {
+        font-size: 3vw;
+      }
+
+    }
+
+    @media screen and (max-width: 500px) {
+
+      .header {
+        font-size: 2vw;
+      }
+
+      .tcell {
+        font-size: 2vw;
+      }
+
+      .buttons {
+        font-size: 3vw;
+      }
+
+    }
+        .my-custom-scrollbar {
+            position: relative;
+            height: 700px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+    </style>
+    <title>CollegeFinder</title>
+</head>
+
+<body>
+    <div class="container-fluid justify-content-center mt-3 mb-3 table-responsive">
+        <% if (data.length !=0) { %>
+            <div class="col-md-12 text-center">
+                <p class="h1 mb-5" style="font-size:4vw;">List of colleges in <%= distName %> in the <%=year %></p>
+                <div class="my-custom-scrollbar table-wrapper-scroll-y ">
+                <table class="table table-responsive-sm table-success table-striped  table-hover  table-bordered">
+                    <thead class="header">
+                        <th> S.NO</th>
+                        <th>College Name</th>
+                        <th>Place</th>
+                        <th>Code</th>
+                        <th>More</th>
+                    </thead>
+                    <tbody>
+                        <% let i=0; for( let clg of uniqueArray) { i=i+1 %>
+                            <tr class="tcell">
+                                <td>
+                                    <%= i %>
+                                </td>
+                                <td>
+                                    <%= clg.instName %>
+                                </td>
+                                <td>
+                                    <%= clg.place %>
+                                </td>
+                                <td>
+                                    <%= clg.instCode %>
+                                </td>
+                                <td><button
+                                        onclick="location.href='https://www.google.com/search?q=<%=clg.instName%>'">More</button>
+                                </td>
+                                <%}%>
+                            </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="d-grid  gap-2 d-md-block">
+                    <a class="btn btn-secondary buttons"  href="/district">Check for other Districts</a>
+                    <a class="btn btn-secondary buttons"  href="/">Click here for another year data</a>
+                </div>
+            </div>
+            <%} else { %>
+                <p class="h1 text-center" style="font-size:5vw;">No data found</p>
+                <p class="h6 text-center" style="font-size:2.5vw;">please enter the valid district</p>
+                <div class="text-center">
+                    <a class="btn btn-secondary" href="/district%> ">Choose Again</a>
+                </div>
+                <% } %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

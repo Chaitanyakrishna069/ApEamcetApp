@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="icon" href="images/Finder.png" type="image/x-icon">
+  <style>
+    .title {
+      font-size: 2vw;
+    }
+    .subtitle {
+      font-size: 1.3vw;
+    }
+    .buttons{
+      font-size: 1.5vw;
+      }
+
+    @media screen and (max-width: 950px) {
+      .title {
+        font-size: 3vw;
+      }
+      .subtitle {
+        font-size: 2vw;
+      }
+      .buttons{
+      font-size: 3vw;
+      }
+
+    }
+
+    @media screen and (max-width: 450px) {
+      .title {
+        font-size: 4vw;
+      }
+
+      .subtitle {
+        font-size: 3vw;
+      }
+
+      .buttons{
+      font-size: 3.2vw;
+      }
+
+    }
+  </style>
+
+  <title>CollegeFinder</title>
+</head>
+
+<body>
+
+  <div class="container-fluid p-5 bg-success text-white text-center">
+    <h1 class="title" >AP Eamcet Counselling Assistor</h1>
+    <p class="subtitle" >Know the closing rank of a particular college using <strong>Know Closing Rank</strong> option</p>
+    <p class="subtitle" >Know list of colleges for a particular rank using <strong>Predict with Rank</strong> option</p>
+    <p class="subtitle" >Know list of colleges in a particular district by<strong>List of colleges</strong> option</p>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="d-flex flex-column align-items-center  justify-content-center">
+      <div class="mb-3"></div>
+      <a href="#" class="btn btn-secondary mb-3 buttons" style="min-width: 30%">Start to prepare best college options using
+        below tools</a>
+    </div>
+    <form action="/finder" method="get">
+      <div class="d-grid col-6 mx-auto gap-2 mb-2">
+        <button type="submit" name="year" value="2018" style="max-width:300%" class="btn btn-success buttons">Know Closing
+          Rank</button>
+      </div>
+    </form>
+
+    <form action="/predictor" method="get">
+      <div class="d-grid col-6 mx-auto gap-2 mb-2">
+        <button type="submit" name="year" value="2019" class="btn btn-success buttons">Predict with Rank</button>
+      </div>
+    </form>
+
+    <form action="/district" method="get">
+      <div class="d-grid col-6 mx-auto gap-2 mb-2">
+        <button type="submit" name="year" value="2020" class="btn btn-success buttons">List of colleges</button>
+      </div>
+    </form>
+
+    <div class="d-grid col-4 mx-auto gap-2 mb-2">
+      <a class="btn btn-success buttons" href="/">Home Page</a>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
